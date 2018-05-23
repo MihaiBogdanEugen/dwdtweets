@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/MihaiBogdanEugen/twittersearchgo"
   packages = ["."]
-  revision = "9ee502bc5a898eac9e08579111310649aabf0a6e"
+  revision = "04f33a3a93cc90bde9a83c0ea764bdcbbd6ed258"
 
 [[projects]]
   branch = "master"
@@ -19,9 +19,36 @@
   packages = ["."]
   revision = "03842ffa4d870fed145b50fd378fd34e87ceca20"
 
+[[projects]]
+  name = "github.com/namsral/flag"
+  packages = ["."]
+  revision = "71ceffbeb0ba60fccc853971bb3ed4d7d90bfd04"
+  version = "v1.7.4-pre"
+
+[[projects]]
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  revision = "c155da19408a8799da419ed3eeb0cb5db0ad5dbc"
+  version = "v1.0.5"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  revision = "75e913eb8a8e3d31a97b216de09de106a7b07681"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = [
+    "unix",
+    "windows"
+  ]
+  revision = "f3b0f5faf591842dced5f027709e1706df17b749"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5fe7321450c6efe4afb268616eb8f37fc0a443a5b83666a5219129cfae939e93"
+  inputs-digest = "b5c70dd3d52a2ecf17ef97c415ff6db070b8b945f1b1892f168332a2b99d7a61"
   solver-name = "gps-cdcl"
   solver-version = 1
