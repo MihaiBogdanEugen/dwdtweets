@@ -100,6 +100,7 @@ func configureClient(twitterAPIConsumerKey string, twitterAPIConsumerSecret stri
 	if sinceID > 0 {
 		client.SetSinceID(sinceID)
 	}
+	client.SetLogger(logger)
 	return client
 }
 

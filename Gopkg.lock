@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/MihaiBogdanEugen/twittersearchgo"
   packages = ["."]
-  revision = "04f33a3a93cc90bde9a83c0ea764bdcbbd6ed258"
+  revision = "90d6cacc7c89a437634217a2831742d9f1026f05"
 
 [[projects]]
   branch = "master"
@@ -35,7 +35,7 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
-  revision = "75e913eb8a8e3d31a97b216de09de106a7b07681"
+  revision = "159ae71589f303f9fbfd7528413e0fe944b9c1cb"
 
 [[projects]]
   branch = "master"
@@ -44,7 +44,7 @@
     "unix",
     "windows"
   ]
-  revision = "f3b0f5faf591842dced5f027709e1706df17b749"
+  revision = "04b83988a018ef3ebffe1485df79d6499b76a4b4"
 
 [solve-meta]
   analyzer-name = "dep"
