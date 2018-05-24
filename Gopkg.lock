@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/MihaiBogdanEugen/twittersearchgo"
   packages = ["."]
-  revision = "90d6cacc7c89a437634217a2831742d9f1026f05"
+  revision = "ce54a2fc5291c8965081bf6493aacf053c279d21"
 
 [[projects]]
   branch = "master"
