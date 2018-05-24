@@ -48,6 +48,19 @@ func main() {
 		logger.WithError(err).Fatalf("cannot create folder %s")
 	}
 
+	var smallTweets []SmallTweet
+	for _, tweet := range response.Tweets {
+		smallTweet := SmallTweet{
+			ID:             tweet.Id(),
+			Text:           tweet.Text(),
+			CreatedAt:      tweet.CreatedAt(),
+			UserScreenName: tweet.User().ScreenName(),
+			Language:       tweet.Language(),
+		}
+
+		smallTweets = append(smallTweets, smallTweet)
+	}
+
 	outputFilePath := filepath.Join(*outputFolderPath, fmt.Sprintf("%s.json", *query))
 
 	outputFile, err := os.Create(outputFilePath)
@@ -58,24 +71,14 @@ func main() {
 
 	writer := bufio.NewWriter(outputFile)
 
-	for _, tweet := range response.Tweets {
-		smallTweet := &SmallTweet{
-			ID:             tweet.Id(),
-			Text:           tweet.Text(),
-			CreatedAt:      tweet.CreatedAt(),
-			UserScreenName: tweet.User().ScreenName(),
-			Language:       tweet.Language(),
-		}
+	tweetsAsBytes, err := json.Marshal(smallTweets)
+	if err != nil {
+		logger.WithError(err).Fatal("cannot json serialize smallTweets object")
+	}
 
-		tweetAsBytes, err := json.Marshal(smallTweet)
-		if err != nil {
-			logger.WithError(err).Fatalf("cannot json serialize object %v", smallTweet)
-		}
-
-		line := string(tweetAsBytes)
-		if _, err := fmt.Fprintln(writer, string(tweetAsBytes)); err != nil {
-			logger.WithError(err).Fatalf("cannot write line %s to output file %s", line, outputFilePath)
-		}
+	line := string(tweetsAsBytes)
+	if _, err := fmt.Fprintln(writer, string(tweetsAsBytes)); err != nil {
+		logger.WithError(err).Fatalf("cannot write line %s to output file %s", line, outputFilePath)
 	}
 
 	if err := writer.Flush(); err != nil {
